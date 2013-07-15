@@ -15,7 +15,7 @@ class Products extends noflo.Component
     @inPorts.secret.on "data", (@secret) => @login()
 
     @inPorts.in.on "data", (field) ->
-      throw new Error "No API key associated yet" unless @sem3?
+      throw new Error "No API key and/or secret associated yet" unless @sem3?
 
       @sem3.products.products_field.apply @sems3.products, field
 

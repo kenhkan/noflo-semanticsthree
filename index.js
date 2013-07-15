@@ -1,5 +1,5 @@
 /*
- * This file can be used for general library features of noflo-semantics3.
+ * This file can be used for general library features of noflo-semanticsThree.
  *
  * The library features can be made available as CommonJS modules that the
  * components in this project utilize.

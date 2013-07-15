@@ -20,7 +20,7 @@ module.exports = ->
         options:
           action: 'install'
     component_build:
-      'noflo-semantics3':
+      'noflo-semanticsThree':
         output: './browser/'
         config: './component.json'
         scripts: true
@@ -35,8 +35,8 @@ module.exports = ->
     # https://github.com/anthonyshort/component-coffee/issues/3
     combine:
       browser:
-        input: 'browser/noflo-semantics3.js'
-        output: 'browser/noflo-semantics3.js'
+        input: 'browser/noflo-semanticsThree.js'
+        output: 'browser/noflo-semanticsThree.js'
         tokens: [
           token: '.coffee'
           string: '.js'
@@ -48,7 +48,7 @@ module.exports = ->
         report: 'min'
       noflo:
         files:
-          './browser/noflo-semantics3.min.js': ['./browser/noflo-semantics3.js']
+          './browser/noflo-semanticsThree.min.js': ['./browser/noflo-semanticsThree.js']
 
     # Automated recompilation and testing when developing
     watch:
