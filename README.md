@@ -8,6 +8,20 @@ Take a look at
 [Semantics3/semantics3-node](https://github.com/Semantics3/semantics3-node)
 first.
 
+### Component *Client* ###
+
+Create a Semantics3 client object given the account key and the secret
+of your account.
+
+#### In-ports
+
+  * KEY: the account key
+  * SECRET: the secret
+
+#### Out-ports
+
+  * OUT: a Semantics3 client object
+
 ### Component *Products* ###
 
 Implements [nested search
@@ -18,8 +32,7 @@ for products.
 
   * IN: a stream of packets, each is an array representing a field in
     the query.  Query is submitted upon disconnect.
-  * KEY: the API key to use
-  * SECRET: the API secret to use
+  * CLIENT: a Semantics3 client object created by `Client` component
 
 #### Out-ports
 
@@ -30,8 +43,11 @@ for products.
 
 Find all "Computers and Accessories" that are on newegg.com.
 
+    'key' -> KEY Client(semanticsThree/Client)
+    'secret' -> SECRET Client() OUT -> CLIENT Products(semanticsThree/Products)
+
     '[["cat_id", 4992], ["sitedetails", "name", "newegg.com"]]' -> IN ParseJson(strings/ParseJson)
-    ParseJson() OUT -> IN SplitFields(objects/SplitArray) OUT -> IN Products(semanticsThree/Products)
+    ParseJson() OUT -> IN SplitFields(objects/SplitArray) OUT -> IN Products()
 
     # Prints out the result object
     Products() OUT -> IN Output(Output)
