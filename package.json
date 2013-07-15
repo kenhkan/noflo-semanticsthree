@@ -1,5 +1,5 @@
 {
-  "name": "noflo-semanticsThree",
+  "name": "noflo-semanticsthree",
   "description": "Wrapper around Semantics3/semantics3-node",
   "version": "0.1.0",
   "author": {
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kenhkan/noflo-semanticsThree.git"
+    "url": "git://github.com/kenhkan/noflo-semanticsthree.git"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/kenhkan/noflo-semanticsThree/blob/master/LICENSE-MIT"
+      "url": "https://github.com/kenhkan/noflo-semanticsthree/blob/master/LICENSE-MIT"
     }
   ],
   "dependencies": {

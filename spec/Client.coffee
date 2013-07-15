@@ -4,7 +4,7 @@ if typeof process is 'object' and process.title is 'node'
   chai = require 'chai' unless chai
   Client = require '../components/Client.coffee'
 else
-  Client = require 'semanticsThree/components/Client.js'
+  Client = require 'semanticsthree/components/Client.js'
 
 describe 'Client component', ->
   c = null

@@ -5,7 +5,7 @@ if typeof process is "object" and process.title is "node"
   chai = require "chai" unless chai
   Products = require "../components/Products.coffee"
 else
-  Products = require "semanticsThree/components/Products.js"
+  Products = require "semanticsthree/components/Products.js"
 
 describe "Products component", ->
   c = null

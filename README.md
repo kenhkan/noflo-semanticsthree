@@ -1,4 +1,4 @@
-# noflo-semanticsThree [![Build Status](https://secure.travis-ci.org/kenhkan/noflo-semanticsThree.png?branch=master)](http://travis-ci.org/kenhkan/noflo-semanticsThree)
+# noflo-semanticsthree [![Build Status](https://secure.travis-ci.org/kenhkan/noflo-semanticsthree.png?branch=master)](http://travis-ci.org/kenhkan/noflo-semanticsthree)
 
 Wrapper around Semantics3/semantics3-node
 
@@ -43,8 +43,8 @@ for products.
 
 Find all "Computers and Accessories" that are on newegg.com.
 
-    'key' -> KEY Client(semanticsThree/Client)
-    'secret' -> SECRET Client() OUT -> CLIENT Products(semanticsThree/Products)
+    'key' -> KEY Client(semanticsthree/Client)
+    'secret' -> SECRET Client() OUT -> CLIENT Products(semanticsthree/Products)
 
     '[["cat_id", 4992], ["sitedetails", "name", "newegg.com"]]' -> IN ParseJson(strings/ParseJson)
     ParseJson() OUT -> IN SplitFields(objects/SplitArray) OUT -> IN Products()
