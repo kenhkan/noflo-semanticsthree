@@ -37,7 +37,8 @@
   },
   "noflo": {
     "components": {
-      "Products": "components/Products.coffee"
+      "Products": "components/Products.coffee",
+      "Client": "components/Client.coffee"
     }
   },
   "keywords": []
