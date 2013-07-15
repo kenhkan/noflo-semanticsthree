@@ -59,11 +59,12 @@ describe "Products component", ->
         done()
 
       ins.connect()
-      ins.send ["cat_id", 4992]
-      ins.send ["sitedetails", "name", "newegg.com"]
+      ins.send
+        cat_id: 4992
+        sitedetails: ["name", "newegg.com"]
       ins.disconnect()
 
-    it "searches with error raised", (done) ->
+    it "searches with bad queries also get sent to 'OUT'", (done) ->
       ins = c.inPorts.in
       out = c.outPorts.out
 
@@ -74,6 +75,7 @@ describe "Products component", ->
         done()
 
       ins.connect()
-      ins.send ["blah_id", 4992]
-      ins.send ["sitedetails", "name", "newegg.com"]
+      ins.send
+        blah_id: 4992
+        sitedetails: ["name", "newegg.com"]
       ins.disconnect()

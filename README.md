@@ -30,8 +30,8 @@ for products.
 
 #### In-ports
 
-  * IN: a stream of packets, each is an array representing a field in
-    the query.  Query is submitted upon disconnect.
+  * IN: an object containing the fields. The value can be an array.
+    Query is submitted upon for each incoming packet.
   * CLIENT: a Semantics3 client object created by `Client` component
 
 #### Out-ports
@@ -46,8 +46,7 @@ Find all "Computers and Accessories" that are on newegg.com.
     'key' -> KEY Client(semanticsthree/Client)
     'secret' -> SECRET Client() OUT -> CLIENT Products(semanticsthree/Products)
 
-    '[["cat_id", 4992], ["sitedetails", "name", "newegg.com"]]' -> IN ParseJson(strings/ParseJson)
-    ParseJson() OUT -> IN SplitFields(objects/SplitArray) OUT -> IN Products()
+    '{"cat_id": 4992, "sitedetails": ["name", "newegg.com"]}' -> IN ParseJson(strings/ParseJson) OUT -> IN Products()
 
     # Prints out the result object
     Products() OUT -> IN Output(Output)

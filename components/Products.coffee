@@ -1,4 +1,5 @@
 noflo = require "noflo"
+_ = require "underscore"
 
 class Products extends noflo.Component
   constructor: ->
@@ -12,10 +13,17 @@ class Products extends noflo.Component
 
     @inPorts.client.on "data", (@client) =>
 
-    @inPorts.in.on "data", (field) =>
-      @client.products.products_field.apply @client.products, field
+    @inPorts.in.on "data", (fields) =>
+      for key, value of fields
+        if _.isArray value
+          field = value
+          field.unshift key
+        else
+          field = [key]
+          field.push value
 
-    @inPorts.in.on "disconnect", =>
+        @client.products.products_field.apply @client.products, field
+
       @client.products.get_products (err, products) =>
         if err?
           @outPorts.error.send err

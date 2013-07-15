@@ -18,7 +18,8 @@
   ],
   "dependencies": {
     "noflo": "~0.3.3",
-    "semantics3-node": "0.0.1"
+    "semantics3-node": "0.0.1",
+    "underscore": "~1.5.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
