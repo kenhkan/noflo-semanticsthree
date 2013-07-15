@@ -1,16 +1,16 @@
 noflo = require 'noflo'
 if typeof process is 'object' and process.title is 'node'
   chai = require 'chai' unless chai
-  Semantics = require '../components/Semantics.coffee'
+  Products = require '../components/Products.coffee'
 else
-  Semantics = require 'noflo-semantics3/components/Semantics.js'
+  Products = require 'noflo-semantics3/components/Products.js'
 
-describe 'Semantics component', ->
+describe 'Products component', ->
   c = null
   ins = null
   out = null
   beforeEach ->
-    c = Semantics.getComponent()
+    c = Products.getComponent()
     ins = noflo.internalSocket.createSocket()
     out = noflo.internalSocket.createSocket()
     c.inPorts.in.attach ins

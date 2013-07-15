@@ -17,7 +17,8 @@
     }
   ],
   "dependencies": {
-    "noflo": "~0.3.3"
+    "noflo": "~0.3.3",
+    "semantics3-node": "0.0.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -33,6 +34,11 @@
     "component-json": "~0.1.4",
     "grunt-combine": "~0.8.3",
     "grunt-component": "~0.1.2"
+  },
+  "noflo": {
+    "components": {
+      "Products": "components/Products.coffee"
+    }
   },
   "keywords": []
 }
