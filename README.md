@@ -1,4 +1,4 @@
-# noflo-semantics3 [![Build Status](https://secure.travis-ci.org/kenhkan/noflo-semantics3.png?branch=master)](http://travis-ci.org/kenhkan/noflo-semantics3)
+# noflo-semanticsThree [![Build Status](https://secure.travis-ci.org/kenhkan/noflo-semanticsThree.png?branch=master)](http://travis-ci.org/kenhkan/noflo-semanticsThree)
 
 Wrapper around Semantics3/semantics3-node
 
@@ -30,7 +30,9 @@ for products.
 
 Find all "Computers and Accessories" that are on newegg.com.
 
-    '[["cat_id", 4992], ["sitedetails", "name", "newegg.com"]' -> IN JSONify(strings/Jsonify) OUT -> IN Split(objects/SplitArray) OUT -> IN Products(semantics3/Products)
+    '[["cat_id", 4992], ["sitedetails", "name", "newegg.com"]]' -> IN ParseJson(strings/ParseJson)
+    ParseJson() OUT -> IN SplitFields(objects/SplitArray) OUT -> IN Products(semanticsThree/Products)
+
     # Prints out the result object
     Products() OUT -> IN Output(Output)
     # Prints out an error

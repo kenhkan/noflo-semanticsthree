@@ -14,18 +14,18 @@ class Products extends noflo.Component
     @inPorts.key.on "data", (@key) => @login()
     @inPorts.secret.on "data", (@secret) => @login()
 
-    @inPorts.in.on "data", (field) ->
+    @inPorts.in.on "data", (field) =>
       throw new Error "No API key and/or secret associated yet" unless @sem3?
 
-      @sem3.products.products_field.apply @sems3.products, field
+      @sem3.products.products_field.apply @sem3.products, field
 
-    @inPorts.in.on "disconnect", ->
-      @sem3.products.get_products (err, products) ->
+    @inPorts.in.on "disconnect", =>
+      @sem3.products.get_products (err, products) =>
         if err?
           @outPorts.error.send err
           @outPorts.error.disconnect()
         else
-          @outPorts.out.send products
+          @outPorts.out.send JSON.parse products
           @outPorts.out.disconnect()
 
   login: ->
