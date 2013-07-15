@@ -79,3 +79,23 @@ describe "Products component", ->
         blah_id: 4992
         sitedetails: ["name", "newegg.com"]
       ins.disconnect()
+
+    it "passes groups through", (done) ->
+      ins = c.inPorts.in
+      out = c.outPorts.out
+
+      out.on "begingroup", (group) ->
+        chai.expect(group).to.equal "group"
+      out.on "data", (data) ->
+        chai.expect(data.code).to.equal "OK"
+        chai.expect(data.results).to.be.an "array"
+      out.on "disconnect", ->
+        done()
+
+      ins.connect()
+      ins.beginGroup "group"
+      ins.send
+        cat_id: 4992
+        sitedetails: ["name", "newegg.com"]
+      ins.endGroup()
+      ins.disconnect()

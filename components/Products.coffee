@@ -13,7 +13,14 @@ class Products extends noflo.Component
 
     @inPorts.client.on "data", (@client) =>
 
+    @inPorts.in.on "connect", (fields) =>
+      @groups = []
+    @inPorts.in.on "beingroup", (group) =>
+      @groups.push group
+
     @inPorts.in.on "data", (fields) =>
+      groups = @groups
+
       for key, value of fields
         if _.isArray value
           field = value
@@ -26,10 +33,22 @@ class Products extends noflo.Component
 
       @client.products.get_products (err, products) =>
         if err?
-          @outPorts.error.send err
-          @outPorts.error.disconnect()
+          @send "error", groups, err
         else
-          @outPorts.out.send JSON.parse products
-          @outPorts.out.disconnect()
+          @send "out", groups, JSON.parse products
+
+  send: (portName, groups, stuff) ->
+    port = @outPorts[portName]
+    return unless port?
+
+    for group in groups
+      port.beginGroup group
+
+    port.send stuff
+
+    for group in groups
+      port.endGroup group
+
+    port.disconnect()
 
 exports.getComponent = -> new Products
