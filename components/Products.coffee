@@ -15,7 +15,7 @@ class Products extends noflo.Component
 
     @inPorts.in.on "connect", (fields) =>
       @groups = []
-    @inPorts.in.on "beingroup", (group) =>
+    @inPorts.in.on "begingroup", (group) =>
       @groups.push group
 
     @inPorts.in.on "data", (fields) =>

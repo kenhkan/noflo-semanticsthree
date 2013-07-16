@@ -84,12 +84,16 @@ describe "Products component", ->
       ins = c.inPorts.in
       out = c.outPorts.out
 
+      groupCount = 0
+
       out.on "begingroup", (group) ->
+        groupCount++
         chai.expect(group).to.equal "group"
       out.on "data", (data) ->
         chai.expect(data.code).to.equal "OK"
         chai.expect(data.results).to.be.an "array"
       out.on "disconnect", ->
+        chai.expect(groupCount).to.equal 1
         done()
 
       ins.connect()
