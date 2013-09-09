@@ -1,4 +1,4 @@
-# noflo-semanticsthree [![Build Status](https://secure.travis-ci.org/kenhkan/noflo-semanticsthree.png?branch=master)](http://travis-ci.org/kenhkan/noflo-semanticsthree)
+# Semantics3 Wrapper <br/>[![Build Status](https://secure.travis-ci.org/kenhkan/noflo-semanticsthree.png?branch=master)](http://travis-ci.org/kenhkan/noflo-semanticsthree) [![Dependency Status](https://gemnasium.com/kenhkan/noflo-semanticsthree.png)](https://gemnasium.com/kenhkan/noflo-semanticsthree) [![NPM version](https://badge.fury.io/js/noflo-semanticsthree.png)](http://badge.fury.io/js/noflo-semanticsthree) [![Stories in Ready](https://badge.waffle.io/kenhkan/noflo-semanticsthree.png)](http://waffle.io/kenhkan/noflo-semanticsthree)
 
 Wrapper around Semantics3/semantics3-node
 
