@@ -2,15 +2,14 @@
   "name": "noflo-semantics3",
   "description": "Wrapper around Products3/semantics3-node",
   "author": "Kenneth Kan <kenhkan@gmail.com>",
-  "repo": "kenhkan/noflo-semantics3",
+  "repo": "kenhkan/noflo-semanticsthree",
   "version": "0.1.0",
   "keywords": [
   ],
   "dependencies": {
-    "bergie/noflo": "*"
+    "noflo/noflo": "*"
   },
   "scripts": [
-    "components/Products.coffee",
     "index.js"
   ],
   "json": [
@@ -18,7 +17,6 @@
   ],
   "noflo": {
     "components": {
-      "Products": "components/Products.coffee"
     }
   }
 }
