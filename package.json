@@ -42,5 +42,8 @@
       "Client": "components/Client.coffee"
     }
   },
-  "keywords": []
+  "keywords": [],
+  "scripts": {
+    "test": "grunt test"
+  }
 }
