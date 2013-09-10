@@ -95,7 +95,7 @@ module.exports = ->
       @task.run 'combine'
       @task.run 'uglify'
 
-  @registerTask 'test', 'Build NoFlo and run automated tests', (target = 'nodejs') =>
+  @registerTask 'test', 'Build NoFlo and run automated tests', (target = 'none') =>
     @task.run 'coffeelint'
     @task.run 'coffee'
     if target is 'all' or target is 'nodejs'

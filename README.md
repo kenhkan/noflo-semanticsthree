@@ -2,6 +2,11 @@
 
 Wrapper around Semantics3/semantics3-node
 
+## Testing
+
+This package is not tested automatically because it requires a Semantics3
+key/secret pair. Please run `grunt test:all` manually to test.
+
 ## Usage
 
 Take a look at
